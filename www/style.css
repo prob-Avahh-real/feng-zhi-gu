@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a2a3d 0%, #07111d 45%, #020509 100%);
+  color: #e8f1ff;
+  font-family: 'Noto Sans SC', Arial, sans-serif;
+}
+
+#app {
+  width: min(980px, calc(100vw - 20px));
+  padding: 18px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 0.12em;
+  color: #e9f9ff;
+}
+
+.subtitle {
+  margin: 8px auto 0;
+  color: #a8bece;
+  max-width: 740px;
+}
+
+#hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  background: rgba(8, 12, 22, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#hud span {
+  font-size: 0.95rem;
+}
+
+.canvas-wrap {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 26px 64px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  background: linear-gradient(180deg, #0f1a2f 0%, #071022 100%);
+}
+
+.message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 28px;
+  text-align: center;
+  color: #bbf1ff;
+  text-shadow: 0 0 18px rgba(187, 241, 255, 0.55);
+  font-size: 1.35rem;
+  pointer-events: none;
+}
+
+.instructions {
+  margin-top: 14px;
+  text-align: center;
+  color: #97a8b8;
+}
+
+@media (max-width: 640px) {
+  #app {
+    width: calc(100vw - 16px);
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  #hud {
+    gap: 8px;
+    padding: 12px;
+  }
+}
