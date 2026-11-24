@@ -87,7 +87,7 @@ function updateHud() {
 }
 
 function applyMovement(delta) {
-  const moveSpeed = player.speed * (player.form === Form.ICE ? 0.88 : player.form === Form.WIND ? 1.1 : 0.95);
+  const moveSpeed = player.speed;
   let dx = 0;
   let dy = 0;
   if (input.left) dx -= 1;

@@ -1,6 +1,6 @@
 # 风之谷
 
-Capacitor Android appId: `com.skat.nausicaavalley` appName: 风之谷 webDir: `www` npm install npm run sync:android npm run apk:debug 穿戴输入：按用途未要求则不加（本脚手架仅移动端）。
+Capacitor Android/iOS appId: `com.skat.nausicaavalley` appName: 风之谷 webDir: `www` npm install npm run sync:android npm run apk:debug npm run sync:ios npm run ios:open 穿戴输入：按用途未要求则不加（本脚手架仅移动端）。
 
 ## 用途与 Target 判定
 
@@ -19,7 +19,7 @@ Capacitor Android appId: `com.skat.nausicaavalley` appName: 风之谷 webDir: `w
 
 ## 技术栈信号
 
-- 检测到：android, capacitor, node
+- 检测到：android, ios, capacitor, node
 
 ## 命令
 
@@ -27,13 +27,15 @@ Capacitor Android appId: `com.skat.nausicaavalley` appName: 风之谷 webDir: `w
 npm install
 npm run build
 npm run sync:android
+npm run sync:ios
 npm run apk:debug
+npm run ios:open
 npm run build:web
 ```
 
 ## 同步说明
 
-改 Web 源码后执行 `npm run build`（或 `build:web`），再 `npx cap sync android`。打 APK 建议使用 **JDK 17**（`JAVA_HOME` 指向 openjdk@17）。
+改 Web 源码后执行 `npm run build`（或 `build:web`），再 `npx cap sync android` 或 `npx cap sync ios`。打 APK 建议使用 **JDK 17**（`JAVA_HOME` 指向 openjdk@17）。iOS 构建需要 Xcode 和 CocoaPods。
 
 ## 助手约束
 
@@ -50,7 +52,15 @@ npm install
 npm test          # 若有
 npm run build     # 或 build:web
 npx cap sync android   # 若有 android/
+npx cap sync ios       # 若有 ios/（需要 CocoaPods 和 Xcode）
 # 可选：JAVA_HOME=…/openjdk@17 npm run apk:debug
+# 可选：npm run ios:open（需要 Xcode 和 CocoaPods）
 ```
 
 **Done 示例**：测试通过（若有）+ web 产物进 `www/`/`dist/` + `cap sync` 无报错。可选穿戴未做可搁置，不纳入强制 Done。
+
+## 已知限制（诚实记录）
+
+- iOS 构建需要 **CocoaPods** 和 **Xcode**（完整版本，非 Command Line Tools）。
+- 当前环境缺少 CocoaPods，`npm run sync:ios` 会在 pod install 步骤失败，但 web 资产同步成功。
+- 解封条件：安装 CocoaPods（`sudo gem install cocoapods`）并配置 Xcode 开发者目录。
