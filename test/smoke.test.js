@@ -1,10 +1,9 @@
-import test from 'node:test';
-import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
-const proj = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const proj = path.join(__dirname, '..');
 
 test('capacitor android present', () => {
   const cap = ['capacitor.config.json', 'capacitor.config.ts'].find((n) =>
@@ -20,4 +19,12 @@ test('package.json has build + test scripts', () => {
   assert.ok(pkg.name);
   assert.ok(pkg.scripts?.build, 'missing build script');
   assert.ok(pkg.scripts?.test, 'missing test script');
+});
+
+test('web bundle includes logic module and does not copy package.json', () => {
+  assert.ok(fs.existsSync(path.join(proj, 'game-logic.js')));
+  const html = fs.readFileSync(path.join(proj, 'index.html'), 'utf8');
+  assert.match(html, /game-logic\.js/);
+  assert.match(html, /btn-form/);
+  assert.match(html, /stick/);
 });

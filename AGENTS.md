@@ -4,7 +4,7 @@ Capacitor Android/iOS appId: `com.skat.nausicaavalley` appName: 风之谷 webDir
 
 ## 用途与 Target 判定
 
-风之谷主题小游戏，已 Capacitor 移动壳
+风之谷主题开放世界小游戏（无总目标），已 Capacitor 移动壳
 
 - 移动端：需要
 - 智能硬件：可选（可搁置）
