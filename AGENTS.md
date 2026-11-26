@@ -1,6 +1,6 @@
-# 风之谷
+# windValley
 
-Capacitor Android/iOS appId: `com.skat.nausicaavalley` appName: 风之谷 webDir: `www` npm install npm run sync:android npm run apk:debug npm run sync:ios npm run ios:open 穿戴输入：按用途未要求则不加（本脚手架仅移动端）。
+Capacitor Android/iOS appId: `com.skat.nausicaavalley` appName: windValley webDir: `www` npm install npm run sync:android npm run apk:debug npm run sync:ios npm run ios:open 穿戴输入：按用途未要求则不加（本脚手架仅移动端）。
 
 ## 用途与 Target 判定
 
