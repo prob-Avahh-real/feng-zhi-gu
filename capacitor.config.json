@@ -1,6 +1,6 @@
 {
   "appId": "com.skat.nausicaavalley",
-  "appName": "风之谷",
+  "appName": "windValley",
   "webDir": "www",
   "server": {
     "androidScheme": "https"

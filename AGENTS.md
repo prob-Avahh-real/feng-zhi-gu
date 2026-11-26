@@ -1,10 +1,10 @@
-# 风之谷
+# windValley
 
-Capacitor Android/iOS appId: `com.skat.nausicaavalley` appName: 风之谷 webDir: `www` npm install npm run sync:android npm run apk:debug npm run sync:ios npm run ios:open 穿戴输入：按用途未要求则不加（本脚手架仅移动端）。
+Capacitor Android/iOS appId: `com.skat.nausicaavalley` appName: windValley webDir: `www` npm install npm run sync:android npm run apk:debug npm run sync:ios npm run ios:open 穿戴输入：按用途未要求则不加（本脚手架仅移动端）。
 
 ## 用途与 Target 判定
 
-风之谷主题小游戏，已 Capacitor 移动壳
+风之谷主题开放世界小游戏（无总目标），已 Capacitor 移动壳
 
 - 移动端：需要
 - 智能硬件：可选（可搁置）

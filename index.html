@@ -2,33 +2,44 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>风之谷</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>windValley</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="app">
     <header>
-      <h1>风之谷</h1>
-      <p class="subtitle">元素循环之旅：风、水、冰的自然共鸣。</p>
+      <h1>windValley</h1>
+      <p class="subtitle">开放谷地，风、水、冰随地气流转，没有指定终点。</p>
     </header>
 
     <div id="hud">
       <span id="form">形态: 风</span>
       <span id="area">区域: 空灵原野</span>
-      <span id="hint">提示: 进入特定区域触发变换。</span>
+      <span id="hint">四处漫游，形态随地气而变。</span>
     </div>
 
     <div class="canvas-wrap">
       <canvas id="game-canvas" width="960" height="540"></canvas>
       <div id="message" class="message"></div>
+      <div id="touch-ui">
+        <div id="stick" class="stick" aria-label="移动摇杆">
+          <div class="stick-base"></div>
+          <div id="stick-knob" class="stick-knob"></div>
+        </div>
+        <div class="touch-actions">
+          <button type="button" id="btn-reset">重置</button>
+          <button type="button" id="btn-form">变换</button>
+        </div>
+      </div>
     </div>
 
     <div id="instructions" class="instructions">
-      WASD / 方向键 移动，空格 触发形态变换，R 重置。
+      摇杆或 WASD 移动；变换钮 / 空格 / E 改换形态；重置钮或 R 回到谷口。
     </div>
   </div>
 
+  <script src="game-logic.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
